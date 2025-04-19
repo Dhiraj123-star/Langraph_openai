@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  langgraph-openai:
+    image: dhiraj918106/langgraph_openai:latest
+    container_name: langgraph-agent
+    ports:
+      - "8000:8000"
+    restart: always
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}  # from your .env file or host env
+    pull_policy: always  # ✅ Pull latest image always (requires Compose v2)

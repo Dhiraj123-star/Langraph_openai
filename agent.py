@@ -11,6 +11,25 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+"""
+LangGraph OpenAI Agent API 🚀
+
+This FastAPI application integrates with LangGraph and OpenAI's GPT-4o-mini model 
+to perform three key NLP tasks on any input text:
+
+1. 📂 Classification - Categorizes text into News, Blog, Research, or Other.
+2. 🧠 Entity Extraction - Extracts entities like Person, Organization, and Location.
+3. ✍️ Summarization - Generates a short one-sentence summary of the input.
+
+Endpoint:
+POST /analyze
+Request Body: { "text": "<your input text>" }
+Response: { "classification": "...", "entities": [...], "summary": "..." }
+
+Powered by LangGraph + LangChain + FastAPI.
+"""
+
+
 # Set up LLM
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 

@@ -1,22 +1,55 @@
-# 🧠 Text Intelligence Pipeline
+🧠 Text Intelligence API with LangGraph + OpenAI
+This project provides a simple API that performs automated text analysis using a LangGraph workflow powered by OpenAI's GPT models.
 
-This project performs automated analysis on a text document using a LangGraph workflow powered by OpenAI's GPT.
+🚀 Functionality
+Text Classification
+Classifies the input text as one of: News, Blog, Research, or Other.
 
-## 🔧 Functionality
+Entity Extraction
+Extracts named entities such as Person, Organization, and Location.
 
-- **Text Classification**  
-  Classifies the input text as either: `News`, `Blog`, `Research`, or `Other`.
+Text Summarization
+Generates a short one-sentence summary of the input text.
 
-- **Entity Extraction**  
-  Identifies and extracts named entities like `Person`, `Organization`, and `Location`.
+📮 API Endpoint
+POST /analyze
+Request Body:
 
-- **Text Summarization**  
-  Generates a one-line summary of the entire document.
+json
+Copy
+Edit
+{
+  "text": "Your input text goes here."
+}
+Response:
 
-## 📂 Input
+json
+Copy
+Edit
+{
+  "classification": "Research",
+  "entities": ["John Doe", "OpenAI", "San Francisco"],
+  "summary": "This text provides insights into research conducted by OpenAI."
+}
+🐳 Docker
+You can build and run the app using Docker:
 
-- Expects a `.txt` file at `data/RAG_document.txt`.
+bash
+Copy
+Edit
+docker build -t your-image-name .
+docker run -p 8000:8000 your-image-name
+Or with Docker Compose (pulls latest image automatically):
 
-## 📤 Output
+bash
+Copy
+Edit
+docker-compose up -d
+⚙️ CI/CD with GitHub Actions
+Every push to the main branch automatically:
 
-- Displays classification, extracted entities, and the summary in the terminal.
+Builds the Docker image
+
+Pushes it to Docker Hub
+
+Keeps your deployment up to date

@@ -85,7 +85,20 @@ workflow.add_edge("summarization", END)
 app_graph = workflow.compile()
 
 # FastAPI App
-app = FastAPI()
+app = FastAPI(
+    title="🧠 LangGraph OpenAI Agent API",
+    description="""
+LangGraph OpenAI Agent API 🚀
+
+This FastAPI application uses LangGraph and OpenAI's GPT-4o-mini model 
+to perform intelligent NLP tasks on input text:
+
+### Features:
+- 📂 **Classification** - Categorizes text into News, Blog, Research, or Other.
+- 🧠 **Entity Extraction** - Extracts Person, Organization, and Location entities.
+- ✍️ **Summarization** - Produces a concise summary of the input.
+"""
+)
 
 @app.post("/analyze")
 def analyze_text(request: TextRequest):

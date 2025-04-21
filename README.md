@@ -1,55 +1,33 @@
-🧠 Text Intelligence API with LangGraph + OpenAI
-This project provides a simple API that performs automated text analysis using a LangGraph workflow powered by OpenAI's GPT models.
+# 🧠 LangGraph OpenAI Agent API
 
-🚀 Functionality
-Text Classification
-Classifies the input text as one of: News, Blog, Research, or Other.
+A FastAPI application that uses **LangGraph**, **LangChain**, and **OpenAI's GPT-4o-mini** to perform intelligent NLP tasks on any input text. Just send a request and get structured insights instantly! ⚡
 
-Entity Extraction
-Extracts named entities such as Person, Organization, and Location.
+---
 
-Text Summarization
-Generates a short one-sentence summary of the input text.
+## 🚀 Features
 
-📮 API Endpoint
-POST /analyze
-Request Body:
+- 📂 **Classification** — Detects whether your text is **News**, **Blog**, **Research**, or **Other**.
+- 🧠 **Entity Extraction** — Pulls out **Person**, **Organization**, and **Location** entities.
+- ✍️ **Summarization** — Generates a quick one-sentence summary.
 
-json
-Copy
-Edit
-{
-  "text": "Your input text goes here."
-}
-Response:
+---
 
-json
-Copy
-Edit
-{
-  "classification": "Research",
-  "entities": ["John Doe", "OpenAI", "San Francisco"],
-  "summary": "This text provides insights into research conducted by OpenAI."
-}
-🐳 Docker
-You can build and run the app using Docker:
+## 🔌 Endpoint
 
-bash
-Copy
-Edit
-docker build -t your-image-name .
-docker run -p 8000:8000 your-image-name
-Or with Docker Compose (pulls latest image automatically):
+**POST** `/analyze`
 
-bash
-Copy
-Edit
-docker-compose up -d
-⚙️ CI/CD with GitHub Actions
-Every push to the main branch automatically:
+Send in a JSON with a `"text"` field, and get back:
+- A classification category
+- Extracted entities
+- A concise summary
 
-Builds the Docker image
+---
 
-Pushes it to Docker Hub
+## 🛠️ Built With
 
-Keeps your deployment up to date
+- 🧩 LangGraph  
+- 🦜 LangChain  
+- 🤖 OpenAI GPT-4o-mini  
+- ⚡ FastAPI  
+- 🧪 Pydantic  
+- 🔐 python-dotenv
